@@ -4,8 +4,8 @@
   "description": "DAY 6 - SKOOL - NODEJS TP",
   "main": "index.js",
   "scripts": {
-    "watch": "nodemon index.js",  
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "nodemon index.js",
+    "test": "mocha index.spec.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +13,8 @@
     "hapi": "^15.0.3"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
     "nodemon": "^1.10.2"
   }
 }
