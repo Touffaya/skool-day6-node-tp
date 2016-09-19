@@ -4,8 +4,15 @@
   "description": "DAY 6 - SKOOL - NODEJS TP",
   "main": "index.js",
   "scripts": {
+    "watch": "nodemon index.js",  
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^15.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.10.2"
+  }
 }
