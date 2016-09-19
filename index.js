@@ -2,6 +2,8 @@ const hapi = require('hapi');
 const swagger = require('hapi-swagger');
 const vision = require('vision');
 const inert = require('inert');
+const joi = require('joi');
+
 const pokemons = require('./pokemons.json');
 
 var server = new hapi.Server();
@@ -39,7 +41,12 @@ server.route([
         pokemons.push(request.payload);
         reply(pokemons).code(201);
       },
-      tags: ['api']
+      tags: ['api'],
+      validate: {
+        payload: {
+          name: joi.string()
+        }
+      }
     }
   }
 ]);
