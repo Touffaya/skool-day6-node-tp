@@ -1,5 +1,13 @@
+/* ------- MOD -------*/
+
+
+/* ------- FS ------- */
+
+
+/* ------- RES ------- */
 const pokemons = require('./res/pokemons');
 
+/* ------- SRC ------- */
 module.exports.sayHello = function (request, reply) {
   reply('Hello world!');
 };

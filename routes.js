@@ -1,9 +1,13 @@
+/* ------- MOD -------*/
 const joi = require('joi');
 
+/* ------- FS ------- */
 const handlers = require('./handlers.js');
 
+/* ------- RES ------- */
 const pokemons = require('./res/pokemons.json');
 
+/* ------- SRC ------- */
 module.exports = [
   {
     method: 'GET',

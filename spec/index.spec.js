@@ -1,10 +1,14 @@
+/* ------- MOD -------*/
 const chai = require('chai');
 const expect = chai.expect;
 
+/* ------- FS ------- */
 const server = require('../index.js');
 
+/* ------- RES ------- */
 const pokemons = require('../res/pokemons.json');
 
+/* ------- SRC ------- */
 describe('Server', () => {
 
   describe('/', () => {

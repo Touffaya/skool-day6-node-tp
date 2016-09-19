@@ -1,13 +1,17 @@
+/* ------- MOD -------*/
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 chai.use(sinonChai);
 const expect = chai.expect;
 
+/* ------- FS ------- */
 const handlers = require('../handlers');
 
+/* ------- RES ------- */
 const pokemons = require('../res/pokemons');
 
+/* ------- SRC ------- */
 describe('handlers', () => {
 
   describe('.sayHello()', () => {
