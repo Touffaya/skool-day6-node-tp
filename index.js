@@ -10,6 +10,13 @@ server.route([
     handler: function (request, reply) {
       reply('Hello world!');
     }
+  },
+  {
+    method: 'GET',
+    path: '/pokemons',
+    handler:function (request, reply) {
+      reply(require('./pokemons'));
+    }
   }
 ]);
 
