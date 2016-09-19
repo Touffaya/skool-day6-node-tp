@@ -14,7 +14,11 @@ describe('Server', () => {
   describe('/pokemons', () => {
     it('Should return a list of pokemons', (done) => {
       server.inject('/pokemons', (res) => {
-        expect(res.result).to.deep.equal([{'name':'pikachu'},{'name':'carapuce'}]);
+        expect(res.result).to.deep.equal([
+          {'name':'pikachu'},
+          {'name':'carapuce'},
+          {'name': 'salameche'}
+        ]);
         done();
       });
     });
