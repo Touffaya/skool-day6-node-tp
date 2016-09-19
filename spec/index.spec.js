@@ -1,6 +1,9 @@
 const chai = require('chai');
 const expect = chai.expect;
-const server = require('./index.js');
+
+const server = require('../index.js');
+
+const pokemons = require('../res/pokemons.json');
 
 describe('Server', () => {
 
@@ -18,11 +21,7 @@ describe('Server', () => {
 
     it('should return a list of pokemons', (done) => {
       server.inject('/pokemons', (res) => {
-        expect(res.result).to.deep.equal([
-          {'name':'pikachu'},
-          {'name':'carapuce'},
-          {'name': 'salameche'}
-        ]);
+        expect(res.result).to.deep.equal(pokemons);
         done();
       });
     });
