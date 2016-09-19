@@ -2,6 +2,7 @@ const hapi = require('hapi');
 const swagger = require('hapi-swagger');
 const vision = require('vision');
 const inert = require('inert');
+const pokemons = require('./pokemons.json');
 
 var server = new hapi.Server();
 server.connection({port:3000});
@@ -20,12 +21,27 @@ server.route([
   {
     method: 'GET',
     path: '/pokemons',
-    config: {handler:function (request, reply) {
-      reply(require('./pokemons'));
-    },
-    tags: ['api']
+    config: {
+      handler: function (request, reply) {
+        reply(require('./pokemons'));
+      },
+      tags: ['api']
+    }
+  },
+  {
+    method: 'POST',
+    path: '/pokemons',
+    config: {
+      handler: function (request, reply) {
+        if(!request.payload) {
+          return reply().code(400);
+        }
+        pokemons.push(request.payload);
+        reply(pokemons).code(201);
+      },
+      tags: ['api']
+    }
   }
-}
 ]);
 
 server.register([inert, vision, swagger], (err) => {
